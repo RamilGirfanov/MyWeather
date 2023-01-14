@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7483117B2972CC9B0015ADA1 /* Model Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117A2972CC9B0015ADA1 /* Model Protocol.swift */; };
 		74C2B7682971BEF500517E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B7672971BEF500517E71 /* AppDelegate.swift */; };
 		74C2B76A2971BEF500517E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B7692971BEF500517E71 /* SceneDelegate.swift */; };
 		74C2B76C2971BEF500517E71 /* WeatherScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B76B2971BEF500517E71 /* WeatherScreenVC.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7483117A2972CC9B0015ADA1 /* Model Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model Protocol.swift"; sourceTree = "<group>"; };
 		74C2B7642971BEF500517E71 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C2B7672971BEF500517E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C2B7692971BEF500517E71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		74C2B77E2971C12C00517E71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7483117A2972CC9B0015ADA1 /* Model Protocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				74C2B77C2971C0E900517E71 /* TabBarController.swift in Sources */,
 				74C2B7682971BEF500517E71 /* AppDelegate.swift in Sources */,
 				74C2B76A2971BEF500517E71 /* SceneDelegate.swift in Sources */,
+				7483117B2972CC9B0015ADA1 /* Model Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
