@@ -9,11 +9,22 @@ import UIKit
 
 class WeatherScreenVC: UIViewController {
     
+//    MARK: - ViewModels
+    
     let locationServiceVM = LocationServiceVM()
     let networkServiceVM = NetworkServiceVM()
     
     
+//    MARK: - Экземпляр View
+    
+    lazy var weatherScreen = WeatherScreen()
+    
+    
 //    MARK: - Lifecycle
+    
+    override func loadView() {
+        view = weatherScreen
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
