@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7483117B2972CC9B0015ADA1 /* Model Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117A2972CC9B0015ADA1 /* Model Protocol.swift */; };
+		7483117B2972CC9B0015ADA1 /* Model Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117A2972CC9B0015ADA1 /* Model Protocols.swift */; };
+		7483117D29746E180015ADA1 /* NetworkServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117C29746E180015ADA1 /* NetworkServiceVM.swift */; };
+		7483117F29746EC90015ADA1 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7483117E29746EC90015ADA1 /* Data.plist */; };
+		74831181297471770015ADA1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74831180297471770015ADA1 /* NetworkService.swift */; };
+		74831184297484290015ADA1 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74831183297484290015ADA1 /* LocationService.swift */; };
+		748311862974843A0015ADA1 /* LocationServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748311852974843A0015ADA1 /* LocationServiceVM.swift */; };
 		74C2B7682971BEF500517E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B7672971BEF500517E71 /* AppDelegate.swift */; };
 		74C2B76A2971BEF500517E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B7692971BEF500517E71 /* SceneDelegate.swift */; };
 		74C2B76C2971BEF500517E71 /* WeatherScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C2B76B2971BEF500517E71 /* WeatherScreenVC.swift */; };
@@ -17,7 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7483117A2972CC9B0015ADA1 /* Model Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model Protocol.swift"; sourceTree = "<group>"; };
+		7483117A2972CC9B0015ADA1 /* Model Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model Protocols.swift"; sourceTree = "<group>"; };
+		7483117C29746E180015ADA1 /* NetworkServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceVM.swift; sourceTree = "<group>"; };
+		7483117E29746EC90015ADA1 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		74831180297471770015ADA1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		74831183297484290015ADA1 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		748311852974843A0015ADA1 /* LocationServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceVM.swift; sourceTree = "<group>"; };
 		74C2B7642971BEF500517E71 /* MyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C2B7672971BEF500517E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C2B7692971BEF500517E71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +49,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74831182297473010015ADA1 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				74C2B7672971BEF500517E71 /* AppDelegate.swift */,
+				74C2B7692971BEF500517E71 /* SceneDelegate.swift */,
+				74C2B77B2971C0E900517E71 /* TabBarController.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		74831187297484490015ADA1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				74831180297471770015ADA1 /* NetworkService.swift */,
+				7483117C29746E180015ADA1 /* NetworkServiceVM.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		74831188297484540015ADA1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				74831183297484290015ADA1 /* LocationService.swift */,
+				748311852974843A0015ADA1 /* LocationServiceVM.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		74C2B75B2971BEF500517E71 = {
 			isa = PBXGroup;
 			children = (
@@ -58,12 +96,10 @@
 		74C2B7662971BEF500517E71 /* MyWeather */ = {
 			isa = PBXGroup;
 			children = (
-				74C2B7672971BEF500517E71 /* AppDelegate.swift */,
-				74C2B7692971BEF500517E71 /* SceneDelegate.swift */,
-				74C2B77B2971C0E900517E71 /* TabBarController.swift */,
+				74831182297473010015ADA1 /* System */,
 				74C2B77D2971C11800517E71 /* Resources */,
-				74C2B77E2971C12C00517E71 /* Model */,
-				74C2B77F2971C13500517E71 /* View Controllers */,
+				74C2B77E2971C12C00517E71 /* Model ViewModel */,
+				74C2B77F2971C13500517E71 /* Views */,
 				74C2B7752971BEF500517E71 /* Info.plist */,
 			);
 			path = MyWeather;
@@ -74,25 +110,28 @@
 			children = (
 				74C2B7702971BEF500517E71 /* Assets.xcassets */,
 				74C2B7722971BEF500517E71 /* LaunchScreen.storyboard */,
+				7483117E29746EC90015ADA1 /* Data.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		74C2B77E2971C12C00517E71 /* Model */ = {
+		74C2B77E2971C12C00517E71 /* Model ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7483117A2972CC9B0015ADA1 /* Model Protocol.swift */,
+				7483117A2972CC9B0015ADA1 /* Model Protocols.swift */,
+				74831187297484490015ADA1 /* Network */,
+				74831188297484540015ADA1 /* Location */,
 			);
-			path = Model;
+			path = "Model ViewModel";
 			sourceTree = "<group>";
 		};
-		74C2B77F2971C13500517E71 /* View Controllers */ = {
+		74C2B77F2971C13500517E71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				74C2B7802971C14300517E71 /* Weather Screen */,
 				74C2B7812971C15000517E71 /* List Screen */,
 			);
-			path = "View Controllers";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		74C2B7802971C14300517E71 /* Weather Screen */ = {
@@ -184,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7483117F29746EC90015ADA1 /* Data.plist in Resources */,
 				74C2B7742971BEF500517E71 /* LaunchScreen.storyboard in Resources */,
 				74C2B7712971BEF500517E71 /* Assets.xcassets in Resources */,
 			);
@@ -198,9 +238,13 @@
 			files = (
 				74C2B76C2971BEF500517E71 /* WeatherScreenVC.swift in Sources */,
 				74C2B77C2971C0E900517E71 /* TabBarController.swift in Sources */,
+				74831184297484290015ADA1 /* LocationService.swift in Sources */,
 				74C2B7682971BEF500517E71 /* AppDelegate.swift in Sources */,
 				74C2B76A2971BEF500517E71 /* SceneDelegate.swift in Sources */,
-				7483117B2972CC9B0015ADA1 /* Model Protocol.swift in Sources */,
+				7483117D29746E180015ADA1 /* NetworkServiceVM.swift in Sources */,
+				7483117B2972CC9B0015ADA1 /* Model Protocols.swift in Sources */,
+				74831181297471770015ADA1 /* NetworkService.swift in Sources */,
+				748311862974843A0015ADA1 /* LocationServiceVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +387,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyWeather/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Этому приложению нужен доступ к вашим геоданным для отображения погодных данных";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -375,6 +420,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyWeather/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Этому приложению нужен доступ к вашим геоданным для отображения погодных данных";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

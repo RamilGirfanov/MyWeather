@@ -16,6 +16,7 @@ class TabBarController: UITabBarController {
     
     private func setupTBC() {
         let weatherScreenVC = WeatherScreenVC()
+        weatherScreenVC.tabBarItem.image = UIImage(systemName: "cloud.sun.fill")
         
         viewControllers = [weatherScreenVC]
     }
