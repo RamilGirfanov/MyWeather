@@ -14,10 +14,8 @@ class NetworkServiceVM: NetworkServiceProtocol {
     func prepareProperties(lat: Double, lon: Double) {
         model.lat = lat
         model.lon = lon
-        guard let appid = UserDefaults.standard.object(forKey: "appid") else { return }
-        model.appid = "\(appid)"
-        guard let lang = UserDefaults.standard.object(forKey: "lang") else { return }
-        model.lang = "\(lang)"
+        model.appid = appid
+        model.lang = lang
     }
     
     func fetchData() {

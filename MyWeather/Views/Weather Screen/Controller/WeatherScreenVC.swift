@@ -26,7 +26,6 @@ class WeatherScreenVC: UIViewController {
         networkServiceVM.prepareProperties(lat: lat, lon: lon)
         
         networkServiceVM.fetchData()
-
     }
 
 

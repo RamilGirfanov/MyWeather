@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743CFEB129755E6B00061E6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CFEB029755E6B00061E6B /* Constants.swift */; };
 		7483117B2972CC9B0015ADA1 /* Model Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117A2972CC9B0015ADA1 /* Model Protocols.swift */; };
 		7483117D29746E180015ADA1 /* NetworkServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117C29746E180015ADA1 /* NetworkServiceVM.swift */; };
 		7483117F29746EC90015ADA1 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7483117E29746EC90015ADA1 /* Data.plist */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		743CFEB029755E6B00061E6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7483117A2972CC9B0015ADA1 /* Model Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model Protocols.swift"; sourceTree = "<group>"; };
 		7483117C29746E180015ADA1 /* NetworkServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceVM.swift; sourceTree = "<group>"; };
 		7483117E29746EC90015ADA1 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		74C2B77D2971C11800517E71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				743CFEB029755E6B00061E6B /* Constants.swift */,
 				74C2B7702971BEF500517E71 /* Assets.xcassets */,
 				74C2B7722971BEF500517E71 /* LaunchScreen.storyboard */,
 				7483117E29746EC90015ADA1 /* Data.plist */,
@@ -241,6 +244,7 @@
 				74831184297484290015ADA1 /* LocationService.swift in Sources */,
 				74C2B7682971BEF500517E71 /* AppDelegate.swift in Sources */,
 				74C2B76A2971BEF500517E71 /* SceneDelegate.swift in Sources */,
+				743CFEB129755E6B00061E6B /* Constants.swift in Sources */,
 				7483117D29746E180015ADA1 /* NetworkServiceVM.swift in Sources */,
 				7483117B2972CC9B0015ADA1 /* Model Protocols.swift in Sources */,
 				74831181297471770015ADA1 /* NetworkService.swift in Sources */,
