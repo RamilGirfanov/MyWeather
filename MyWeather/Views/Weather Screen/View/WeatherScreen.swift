@@ -9,6 +9,14 @@ import UIKit
 
 class WeatherScreen: UIView {
     
+//    MARK: - Colors
+    
+    var firstColor: WeatherColor?
+    var secontColor: WeatherColor?
+    var thridColor: WeatherColor?
+    var fourthColor: WeatherColor?
+    
+    
 //    MARK: - UIObjects
     
     private let topBackgroundView: UIView = {
@@ -34,18 +42,26 @@ class WeatherScreen: UIView {
         return descriptionLabel
     }()
     
-    let locationImageView: UIImageView = {
-        let locationImageView = UIImageView()
-        locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
-        locationImageView.tintColor = .white
-        locationImageView.translatesAutoresizingMaskIntoConstraints = false
-        return locationImageView
+    private let subViewForLocation: UIView = {
+        let subViewForLocation = UIView()
+        subViewForLocation.backgroundColor = .red
+        subViewForLocation.layer.cornerRadius = 22
+        subViewForLocation.translatesAutoresizingMaskIntoConstraints = false
+        return subViewForLocation
     }()
+        
+//    let locationImageView: UIImageView = {
+//        let locationImageView = UIImageView()
+//        locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
+//        locationImageView.tintColor = .white
+//        locationImageView.translatesAutoresizingMaskIntoConstraints = false
+//        return locationImageView
+//    }()
     
     let locationLabel: UILabel = {
         let locationLabel = UILabel()
         locationLabel.text = "Санкт-Петербург"
-        locationLabel.font = .systemFont(ofSize: 20)
+        locationLabel.font = .systemFont(ofSize: 20, weight: .bold)
         locationLabel.textColor = .white
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         return locationLabel
@@ -74,7 +90,7 @@ class WeatherScreen: UIView {
     private func layout() {
         [topBackgroundView, topContentView].forEach { addSubview($0) }
         
-        [descriptionLabel, locationImageView, locationLabel, temperatureLabel, weatherImageView].forEach { topContentView.addSubview($0) }
+        [subViewForLocation, descriptionLabel, locationLabel, temperatureLabel, weatherImageView].forEach { topContentView.addSubview($0) }
         
         
         let safeIndent1: CGFloat = 16
@@ -85,6 +101,24 @@ class WeatherScreen: UIView {
             topContentView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent2),
             topContentView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -safeIndent2),
             
+            subViewForLocation.topAnchor.constraint(equalTo: topContentView.topAnchor),
+            subViewForLocation.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -22),
+            subViewForLocation.trailingAnchor.constraint(lessThanOrEqualTo: weatherImageView.leadingAnchor, constant: -safeIndent1),
+            subViewForLocation.heightAnchor.constraint(equalToConstant: 44),
+                        
+//            locationImageView.heightAnchor.constraint(equalToConstant: 35),
+//            locationImageView.widthAnchor.constraint(equalToConstant: 35),
+//            locationImageView.topAnchor.constraint(equalTo: subViewForLocation.topAnchor),
+//            locationImageView.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
+//            locationImageView.bottomAnchor.constraint(equalTo: subViewForLocation.bottomAnchor),
+            
+            locationLabel.centerYAnchor.constraint(equalTo: subViewForLocation.centerYAnchor),
+            locationLabel.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
+            locationLabel.trailingAnchor.constraint(equalTo: subViewForLocation.trailingAnchor, constant: -safeIndent1),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: subViewForLocation.bottomAnchor, constant: safeIndent2),
+            descriptionLabel.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
+            
             weatherImageView.heightAnchor.constraint(equalToConstant: 150),
             weatherImageView.widthAnchor.constraint(equalToConstant: 150),
             weatherImageView.topAnchor.constraint(equalTo: topContentView.topAnchor),
@@ -94,35 +128,23 @@ class WeatherScreen: UIView {
             temperatureLabel.trailingAnchor.constraint(equalTo: topContentView.trailingAnchor),
             temperatureLabel.bottomAnchor.constraint(equalTo: topContentView.bottomAnchor, constant: -safeIndent2),
             
-            
-            descriptionLabel.centerYAnchor.constraint(equalTo: weatherImageView.centerYAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
-
-            
-            locationLabel.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
-            locationLabel.bottomAnchor.constraint(equalTo: topContentView.bottomAnchor, constant: -safeIndent2),
-
-            locationImageView.heightAnchor.constraint(equalToConstant: 44),
-            locationImageView.widthAnchor.constraint(equalToConstant: 44),
-            locationImageView.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor),
-            locationImageView.bottomAnchor.constraint(equalTo: locationLabel.topAnchor, constant: -safeIndent2),
-            
-
             topBackgroundView.topAnchor.constraint(equalTo: topAnchor),
             topBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
             topBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             topBackgroundView.bottomAnchor.constraint(equalTo: topContentView.bottomAnchor),
-//            topBackgroundView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)
-            
             
         ])
     }
     
     
 //    MARK: - Setting
-    
-    func settingUIObjects() {
         
+    func settingColors() {
+//        topContentView.backgroundColor = UIColor(red: , green: , blue: , alpha: 1)
+        subViewForLocation.backgroundColor = UIColor(red: fourthColor?.red ?? <#default value#>, green: fourthColor?.green ?? <#default value#>, blue: fourthColor?.blue ?? <#default value#>, alpha: 1)
+        locationLabel.backgroundColor = UIColor(red: firstColor?.red ?? <#default value#>, green: firstColor?.green ?? <#default value#>, blue: firstColor?.blue ?? <#default value#>, alpha: 1)
+        weatherImageView.backgroundColor = UIColor(red: firstColor?.red ?? <#default value#>, green: firstColor?.green ?? <#default value#>, blue: firstColor?.blue ?? <#default value#>, alpha: 1)
+        temperatureLabel.backgroundColor = UIColor(red: firstColor?.red ?? <#default value#>, green: firstColor?.green ?? <#default value#>, blue: firstColor?.blue ?? <#default value#>, alpha: 1)
     }
     
     
@@ -131,7 +153,6 @@ class WeatherScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
-        settingUIObjects()
     }
     
     required init?(coder: NSCoder) {
