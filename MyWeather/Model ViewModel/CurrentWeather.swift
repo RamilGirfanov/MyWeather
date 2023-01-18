@@ -10,9 +10,9 @@ import Foundation
 struct CurrentWeater {
     let cityName: String
     
-    let tempetature: Double
+    let temperature: Double
     var temperatureString: String {
-        return String(format: "%.0f", tempetature)
+        return String(format: "%.0f", temperature)
     }
     
     let feelsLikeTempetature: Double
@@ -29,9 +29,36 @@ struct CurrentWeater {
     var tempMaxString: String {
         return String(format: "%.0f", tempMax)
     }
+    
+    let humidity: Int
 
-    let conditionCode: Int
-    let descriptionWeather: String
+    let iconCode: String
+    var systeemIconNameString: String {
+        switch iconCode {
+        case "01d": return "sun.max"
+        case "01n": return "moon.stars.fill"
+        case "02d": return "cloud.sun.fill"
+        case "02n": return "cloud.moon.fill"
+        case "03d": return "cloud.fill"
+        case "03n": return "cloud.fill"
+        case "04d": return "cloud.fill"
+        case "04n": return "cloud.fill"
+        case "09d": return "cloud.drizzle.fill"
+        case "09n": return "cloud.drizzle.fill"
+        case "10d": return "cloud.sun.rain.fill"
+        case "10n": return "cloud.moon.rain.fill"
+        case "11d": return "cloud.bolt.rain.fill"
+        case "11n": return "cloud.bolt.rain.fill"
+        case "13d": return "snowflake"
+        case "13n": return "snowflake"
+        case "50d": return "cloud.fog.fill"
+        case "50n": return "cloud.fog.fill"
+        default:
+            return "nosign"
+        }
+    }
+        
+    let description: String
     
     let windSpeed: Double
     var windSpeedString: String {
@@ -40,11 +67,13 @@ struct CurrentWeater {
     
     init?(curentWeatherData: CurrentWeatherData) {
         cityName = curentWeatherData.name
-        tempetature = curentWeatherData.main.temp
+        temperature = curentWeatherData.main.temp
         feelsLikeTempetature = curentWeatherData.main.feelsLike
         tempMin = curentWeatherData.main.tempMin
         tempMax = curentWeatherData.main.tempMax
-        conditionCode = curentWeatherData.weather.first!.id
+        humidity = curentWeatherData.main.humidity
+        iconCode = curentWeatherData.weather.first!.icon
+        description = curentWeatherData.weather.first!.description
         windSpeed = curentWeatherData.wind.speed
     }
 }

@@ -36,11 +36,11 @@ struct Main: Decodable {
 }
 
 struct Weather: Decodable {
-//    use
     let id: Int
     let main: String
 //    use
     let description: String
+    //    use
     let icon: String
 }
 
