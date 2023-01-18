@@ -11,5 +11,5 @@ class NetworkService {
     var lat: Double = 60.001974
     var lon: Double = 30.389077
         
-    lazy var urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(appid)&lang=\(lang)"
+    lazy var urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(appid)&lang=\(lang)&units=metric"
 }

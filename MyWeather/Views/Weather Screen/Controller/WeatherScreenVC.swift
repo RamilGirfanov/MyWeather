@@ -11,8 +11,8 @@ class WeatherScreenVC: UIViewController {
     
 //    MARK: - ViewModels
     
-    let locationServiceVM = LocationServiceVM()
-    let networkServiceVM = NetworkServiceVM()
+    var locationServiceVM = LocationServiceVM()
+    var networkServiceVM = NetworkServiceVM()
     
     
 //    MARK: - Экземпляр View
@@ -37,8 +37,11 @@ class WeatherScreenVC: UIViewController {
         networkServiceVM.prepareProperties(lat: lat, lon: lon)
         
         networkServiceVM.fetchData()
+        networkServiceVM.onCompletion = { currentWeater in 
+            
+        }
         
-        weatherScreen.settingColors()
+        weatherScreen.settingColors(temp: Int)
     }
 
 

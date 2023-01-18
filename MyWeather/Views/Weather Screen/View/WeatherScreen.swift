@@ -9,14 +9,6 @@ import UIKit
 
 class WeatherScreen: UIView {
     
-//    MARK: - Colors
-    
-    var firstColor: WeatherColor?
-    var secontColor: WeatherColor?
-    var thridColor: WeatherColor?
-    var fourthColor: WeatherColor?
-    
-    
 //    MARK: - UIObjects
     
     private let topBackgroundView: UIView = {
@@ -49,14 +41,6 @@ class WeatherScreen: UIView {
         subViewForLocation.translatesAutoresizingMaskIntoConstraints = false
         return subViewForLocation
     }()
-        
-//    let locationImageView: UIImageView = {
-//        let locationImageView = UIImageView()
-//        locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
-//        locationImageView.tintColor = .white
-//        locationImageView.translatesAutoresizingMaskIntoConstraints = false
-//        return locationImageView
-//    }()
     
     let locationLabel: UILabel = {
         let locationLabel = UILabel()
@@ -139,7 +123,18 @@ class WeatherScreen: UIView {
     
 //    MARK: - Setting
         
-    func settingColors() {
+    func settingColors(temp: Int) {
+        var firstColor: WeatherColor
+        var secontColor: WeatherColor
+        var thridColor: WeatherColor
+        var fourthColor: WeatherColor
+        
+        switch temp {
+        case 
+        default:
+            <#code#>
+        }
+
 //        topContentView.backgroundColor = UIColor(red: , green: , blue: , alpha: 1)
         subViewForLocation.backgroundColor = UIColor(red: fourthColor?.red ?? <#default value#>, green: fourthColor?.green ?? <#default value#>, blue: fourthColor?.blue ?? <#default value#>, alpha: 1)
         locationLabel.backgroundColor = UIColor(red: firstColor?.red ?? <#default value#>, green: firstColor?.green ?? <#default value#>, blue: firstColor?.blue ?? <#default value#>, alpha: 1)
