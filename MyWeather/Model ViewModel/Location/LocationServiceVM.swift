@@ -24,10 +24,7 @@ class LocationServiceVM: NSObject, LocationServiceProtocol, CLLocationManagerDel
     
     func getLocation() {
         model.lat = locationManager.location?.coordinate.latitude
-        model.lon = locationManager.location?.coordinate.longitude
-        
-        print(model.lat ?? "Увы")
-        print(model.lon ?? "Увы")
+        model.lon = locationManager.location?.coordinate.longitude        
     }
     
     func translateLocation() -> String {

@@ -29,12 +29,12 @@ class WeatherScreenVC: UIViewController {
     private func updateInterface(weather: CurrentWeater) {
         DispatchQueue.main.async { [self] in
             weatherScreen.locationLabel.text = weather.cityName
+            weatherScreen.temperatureLabel.text = "\(Int(weather.temperature.rounded()))ºC"
             weatherScreen.descriptionLabel.text = weather.description
             weatherScreen.feelsLikeTempetatureLabel.text = "Ощущается как: \(Int(weather.feelsLikeTempetature.rounded()))ºC"
             weatherScreen.minMaxTempLabel.text = "Мин.: \(Int(weather.tempMin.rounded()))ºC, макс.: \(Int(weather.tempMax.rounded()))ºC"
             weatherScreen.windSpeedLabel.text = "Ветер: \(Int(weather.windSpeed.rounded())) м/с"
             weatherScreen.humidityLabel.text = "Влажность: \(weather.humidity) %"
-            weatherScreen.temperatureLabel.text = "\(Int(weather.temperature.rounded()))ºC"
             weatherScreen.weatherImageView.image = UIImage(systemName: weather.systeemIconNameString)
             
             weatherScreen.settingColors(temp: Int(weather.temperature.rounded()))
@@ -49,7 +49,7 @@ class WeatherScreenVC: UIViewController {
         guard let lat = locationServiceVM.model.lat else { return }
         guard let lon = locationServiceVM.model.lon else { return }
         
-        networkServiceVM.prepareProperties(lat: lat, lon: lon)
+        networkServiceVM.prepareProperties(lat: 60.001974, lon: 30.389077)
         
         networkServiceVM.fetchData()
         

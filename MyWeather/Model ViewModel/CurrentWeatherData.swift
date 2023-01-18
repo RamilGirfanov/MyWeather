@@ -8,6 +8,7 @@
 import Foundation
 
 struct CurrentWeatherData: Decodable {
+//    use
     let name: String
     let main: Main
     let weather: [Weather]
@@ -36,11 +37,9 @@ struct Main: Decodable {
 }
 
 struct Weather: Decodable {
-    let id: Int
-    let main: String
 //    use
     let description: String
-    //    use
+//    use
     let icon: String
 }
 

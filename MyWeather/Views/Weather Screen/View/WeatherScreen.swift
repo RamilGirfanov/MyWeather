@@ -25,6 +25,22 @@ class WeatherScreen: UIView {
         return topContentView
     }()
     
+    private let subViewForLocation: UIView = {
+        let subViewForLocation = UIView()
+        subViewForLocation.backgroundColor = .red
+        subViewForLocation.layer.cornerRadius = 22
+        subViewForLocation.translatesAutoresizingMaskIntoConstraints = false
+        return subViewForLocation
+    }()
+    
+    let locationLabel: UILabel = {
+        let locationLabel = UILabel()
+        locationLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        locationLabel.textColor = .white
+        locationLabel.translatesAutoresizingMaskIntoConstraints = false
+        return locationLabel
+    }()
+    
     let descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
         descriptionLabel.font = .systemFont(ofSize: 20)
@@ -65,22 +81,6 @@ class WeatherScreen: UIView {
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         return humidityLabel
     }()
-
-    private let subViewForLocation: UIView = {
-        let subViewForLocation = UIView()
-        subViewForLocation.backgroundColor = .red
-        subViewForLocation.layer.cornerRadius = 22
-        subViewForLocation.translatesAutoresizingMaskIntoConstraints = false
-        return subViewForLocation
-    }()
-    
-    let locationLabel: UILabel = {
-        let locationLabel = UILabel()
-        locationLabel.font = .systemFont(ofSize: 20, weight: .bold)
-        locationLabel.textColor = .white
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        return locationLabel
-    }()
     
     let temperatureLabel: UILabel = {
         let temperatureLabel = UILabel()
@@ -93,6 +93,7 @@ class WeatherScreen: UIView {
     let weatherImageView: UIImageView = {
         let weatherImageView = UIImageView()
         weatherImageView.image = UIImage(systemName: "cloud.rain.fill")
+        weatherImageView.contentMode = .scaleAspectFit
         weatherImageView.tintColor = .white
         weatherImageView.translatesAutoresizingMaskIntoConstraints = false
         return weatherImageView
@@ -174,182 +175,187 @@ class WeatherScreen: UIView {
         
         switch temp {
         case ...(-40):
-            firstColor.red = 60
-            firstColor.green = 7
-            firstColor.blue = 132
+            firstColor.red = 60 / 255
+            firstColor.green = 7 / 255
+            firstColor.blue = 132 / 255
             
-            secontColor.red = 50
-            secontColor.green = 4
-            secontColor.blue = 114
-
-            thridColor.red = 36
-            thridColor.green = 2
-            thridColor.blue = 91
+            secontColor.red = 50 / 255
+            secontColor.green = 4 / 255
+            secontColor.blue = 114 / 255
             
-            fourthColor.red = 20
-            fourthColor.green = 1
-            fourthColor.blue = 63
+            thridColor.red = 36 / 255
+            thridColor.green = 2 / 255
+            thridColor.blue = 91 / 255
+            
+            fourthColor.red = 20 / 255
+            fourthColor.green = 1 / 255
+            fourthColor.blue = 63 / 255
             
         case -39...(-30):
-            firstColor.red = 42
-            firstColor.green = 4
-            firstColor.blue = 156
+            firstColor.red = 42 / 255
+            firstColor.green = 4 / 255
+            firstColor.blue = 156 / 255
             
-            secontColor.red = 53
-            secontColor.green = 5
-            secontColor.blue = 142
-
-            thridColor.red = 60
-            thridColor.green = 7
-            thridColor.blue = 132
+            secontColor.red = 53 / 255
+            secontColor.green = 5 / 255
+            secontColor.blue = 142 / 255
             
-            fourthColor.red = 50
-            fourthColor.green = 4
-            fourthColor.blue = 114
+            thridColor.red = 60 / 255
+            thridColor.green = 7 / 255
+            thridColor.blue = 132 / 255
+            
+            fourthColor.red = 50 / 255
+            fourthColor.green = 4 / 255
+            fourthColor.blue = 114 / 255
             
         case -29...(-20):
-            firstColor.red = 25
-            firstColor.green = 24
-            firstColor.blue = 241
+            firstColor.red = 25 / 255
+            firstColor.green = 24 / 255
+            firstColor.blue = 241 / 255
             
-            secontColor.red = 25
-            secontColor.green = 13
-            secontColor.blue = 212
-
-            thridColor.red = 42
-            thridColor.green = 4
-            thridColor.blue = 156
+            secontColor.red = 25 / 255
+            secontColor.green = 13 / 255
+            secontColor.blue = 212 / 255
             
-            fourthColor.red = 53
-            fourthColor.green = 5
-            fourthColor.blue = 142
+            thridColor.red = 42 / 255
+            thridColor.green = 4 / 255
+            thridColor.blue = 156 / 255
+            
+            fourthColor.red = 53 / 255
+            fourthColor.green = 5 / 255
+            fourthColor.blue = 142 / 255
             
         case -19...(-10):
-            firstColor.red = 53
-            firstColor.green = 120
-            firstColor.blue = 245
+            firstColor.red = 53 / 255
+            firstColor.green = 120 / 255
+            firstColor.blue = 245 / 255
             
-            secontColor.red = 34
-            secontColor.green = 77
-            secontColor.blue = 245
-
-            thridColor.red = 25
-            thridColor.green = 24
-            thridColor.blue = 241
+            secontColor.red = 34 / 255
+            secontColor.green = 77 / 255
+            secontColor.blue = 245 / 255
             
-            fourthColor.red = 25
-            fourthColor.green = 13
-            fourthColor.blue = 212
+            thridColor.red = 25 / 255
+            thridColor.green = 24 / 255
+            thridColor.blue = 241 / 255
+            
+            fourthColor.red = 25 / 255
+            fourthColor.green = 13 / 255
+            fourthColor.blue = 212 / 255
             
         case -9...0:
-            firstColor.red = 119
-            firstColor.green = 221
-            firstColor.blue = 224
+            firstColor.red = 119 / 255
+            firstColor.green = 221 / 255
+            firstColor.blue = 224 / 255
             
-            secontColor.red = 88
-            secontColor.green = 187
-            secontColor.blue = 243
-
-            thridColor.red = 53
-            thridColor.green = 120
-            thridColor.blue = 245
+            secontColor.red = 88 / 255
+            secontColor.green = 187 / 255
+            secontColor.blue = 243 / 255
             
-            fourthColor.red = 34
-            fourthColor.green = 77
-            fourthColor.blue = 245
+            thridColor.red = 53 / 255
+            thridColor.green = 120 / 255
+            thridColor.blue = 245 / 255
+            
+            fourthColor.red = 34 / 255
+            fourthColor.green = 77 / 255
+            fourthColor.blue = 245 / 255
             
         case 1...9:
-            firstColor.red = 88
-            firstColor.green = 187
-            firstColor.blue = 243
+            firstColor.red = 88 / 255
+            firstColor.green = 187 / 255
+            firstColor.blue = 243 / 255
             
-            secontColor.red = 119
-            secontColor.green = 221
-            secontColor.blue = 224
-
-            thridColor.red = 99
-            thridColor.green = 146
-            thridColor.blue = 42
+            secontColor.red = 119 / 255
+            secontColor.green = 221 / 255
+            secontColor.blue = 224 / 255
             
-            fourthColor.red = 142
-            fourthColor.green = 176
-            fourthColor.blue = 53
+            thridColor.red = 99 / 255
+            thridColor.green = 146 / 255
+            thridColor.blue = 42 / 255
+            
+            fourthColor.red = 142 / 255
+            fourthColor.green = 176 / 255
+            fourthColor.blue = 53 / 255
             
         case 10...19:
-            firstColor.red = 99
-            firstColor.green = 146
-            firstColor.blue = 42
+            firstColor.red = 99 / 255
+            firstColor.green = 146 / 255
+            firstColor.blue = 42 / 255
             
-            secontColor.red = 142
-            secontColor.green = 17
-            secontColor.blue = 53
-
-            thridColor.red = 198
-            thridColor.green = 210
-            thridColor.blue = 69
+            secontColor.red = 142 / 255
+            secontColor.green = 17 / 255
+            secontColor.blue = 53 / 255
             
-            fourthColor.red = 235
-            fourthColor.green = 221
-            fourthColor.blue = 78
-
+            thridColor.red = 198 / 255
+            thridColor.green = 210 / 255
+            thridColor.blue = 69 / 255
+            
+            fourthColor.red = 235 / 255
+            fourthColor.green = 221 / 255
+            fourthColor.blue = 78 / 255
+            
         case 20...29:
-            firstColor.red = 198
-            firstColor.green = 210
-            firstColor.blue = 69
+            firstColor.red = 198 / 255
+            firstColor.green = 210 / 255
+            firstColor.blue = 69 / 255
             
-            secontColor.red = 235
-            secontColor.green = 221
-            secontColor.blue = 78
-
-            thridColor.red = 229
-            thridColor.green = 158
-            thridColor.blue = 73
+            secontColor.red = 235 / 255
+            secontColor.green = 221 / 255
+            secontColor.blue = 78 / 255
             
-            fourthColor.red = 225
-            fourthColor.green = 137
-            fourthColor.blue = 67
+            thridColor.red = 229 / 255
+            thridColor.green = 158 / 255
+            thridColor.blue = 73 / 255
+            
+            fourthColor.red = 225 / 255
+            fourthColor.green = 137 / 255
+            fourthColor.blue = 67 / 255
             
         case 30...39:
-            firstColor.red = 229
-            firstColor.green = 158
-            firstColor.blue = 73
+            firstColor.red = 229 / 255
+            firstColor.green = 158 / 255
+            firstColor.blue = 73 / 255
             
-            secontColor.red = 225
-            secontColor.green = 137
-            secontColor.blue = 67
-
-            thridColor.red = 200
-            thridColor.green = 77
-            thridColor.blue = 57
+            secontColor.red = 225 / 255
+            secontColor.green = 137 / 255
+            secontColor.blue = 67 / 255
             
-            fourthColor.red = 158
-            fourthColor.green = 46
-            fourthColor.blue = 54
+            thridColor.red = 200 / 255
+            thridColor.green = 77 / 255
+            thridColor.blue = 57 / 255
+            
+            fourthColor.red = 158 / 255
+            fourthColor.green = 46 / 255
+            fourthColor.blue = 54 / 255
             
         case 40...:
-            firstColor.red = 200
-            firstColor.green = 77
-            firstColor.blue = 57
+            firstColor.red = 200 / 255
+            firstColor.green = 77 / 255
+            firstColor.blue = 57 / 255
             
-            secontColor.red = 158
-            secontColor.green = 46
-            secontColor.blue = 54
-
-            thridColor.red = 129
-            thridColor.green = 34
-            thridColor.blue = 48
+            secontColor.red = 158 / 255
+            secontColor.green = 46 / 255
+            secontColor.blue = 54 / 255
             
-            fourthColor.red = 119
-            fourthColor.green = 30
-            fourthColor.blue = 45
+            thridColor.red = 129 / 255
+            thridColor.green = 34 / 255
+            thridColor.blue = 48 / 255
+            
+            fourthColor.red = 119 / 255
+            fourthColor.green = 30 / 255
+            fourthColor.blue = 45 / 255
         default: break
         }
 
 //        topContentView.backgroundColor = UIColor(red: , green: , blue: , alpha: 1)
         subViewForLocation.backgroundColor = UIColor(red: fourthColor.red, green: fourthColor.green, blue: fourthColor.blue, alpha: 1)
-        locationLabel.backgroundColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
-        weatherImageView.backgroundColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
-        temperatureLabel.backgroundColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        locationLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        descriptionLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        feelsLikeTempetatureLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        minMaxTempLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        windSpeedLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        humidityLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        weatherImageView.tintColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
+        temperatureLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
     }
     
     
