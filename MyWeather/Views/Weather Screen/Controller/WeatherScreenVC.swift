@@ -28,7 +28,7 @@ class WeatherScreenVC: UIViewController {
     
     private func updateInterface(weather: CurrentWeater) {
         DispatchQueue.main.async { [self] in
-            weatherScreen.locationLabel.text = weather.cityName
+            weatherScreen.locationLabel.text = networkServiceVM.model.cityName
             weatherScreen.temperatureLabel.text = "\(Int(weather.temperature.rounded()))ºC"
             weatherScreen.descriptionLabel.text = weather.description
             weatherScreen.feelsLikeTempetatureLabel.text = "Ощущается как: \(Int(weather.feelsLikeTempetature.rounded()))ºC"
@@ -49,8 +49,12 @@ class WeatherScreenVC: UIViewController {
         guard let lat = locationServiceVM.model.lat else { return }
         guard let lon = locationServiceVM.model.lon else { return }
         
-        networkServiceVM.prepareProperties(lat: 60.001974, lon: 30.389077)
+//        networkServiceVM.prepareProperties(lat: 60.001974, lon: 30.389077)
+        networkServiceVM.prepareProperties(lat: lat, lon: lon)
         
+        networkServiceVM.translateLocation()
+
+
         networkServiceVM.fetchData()
         
         networkServiceVM.onCompletion = { [weak self] currentWeater in

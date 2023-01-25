@@ -346,7 +346,7 @@ class WeatherScreen: UIView {
         default: break
         }
 
-//        topContentView.backgroundColor = UIColor(red: , green: , blue: , alpha: 1)
+        topBackgroundView.backgroundColor = UIColor(red: thridColor.red , green: thridColor.green, blue: thridColor.blue, alpha: 1)
         subViewForLocation.backgroundColor = UIColor(red: fourthColor.red, green: fourthColor.green, blue: fourthColor.blue, alpha: 1)
         locationLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)
         descriptionLabel.textColor = UIColor(red: firstColor.red, green: firstColor.green, blue: firstColor.blue, alpha: 1)

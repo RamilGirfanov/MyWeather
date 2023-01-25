@@ -13,24 +13,14 @@ class LocationServiceVM: NSObject, LocationServiceProtocol, CLLocationManagerDel
 //    MARK: - Model
     
     let model = LocationService()
-    
-    
-//    MARK: - Location
-    
-    let locationManager = CLLocationManager()
-    
+        
     
 //    MARK: - Methods
     
     func getLocation() {
-        model.lat = locationManager.location?.coordinate.latitude
-        model.lon = locationManager.location?.coordinate.longitude        
-    }
-    
-    func translateLocation() -> String {
-//        Преобразует координаты в населенный пункт
-        
-        return "пока так"
+//        model.locationManager.requestLocation()
+        model.lat = model.locationManager.location?.coordinate.latitude
+        model.lon = model.locationManager.location?.coordinate.longitude
     }
     
     
@@ -38,7 +28,8 @@ class LocationServiceVM: NSObject, LocationServiceProtocol, CLLocationManagerDel
     
     override init() {
         super.init()
-        locationManager.requestWhenInUseAuthorization()
+        model.locationManager.delegate = self
     }
 }
+
 

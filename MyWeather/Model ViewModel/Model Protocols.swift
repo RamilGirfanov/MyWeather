@@ -9,10 +9,10 @@ import Foundation
 
 protocol LocationServiceProtocol {
     func getLocation()
-    func translateLocation() -> String
 }
 
 protocol NetworkServiceProtocol {
     func prepareProperties(lat: Double, lon: Double)
     func fetchData()
+    func translateLocation()
 }
