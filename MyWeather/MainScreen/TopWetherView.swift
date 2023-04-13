@@ -93,7 +93,7 @@ final class TopWetherView: UIView {
             
             descriptionLabel.centerYAnchor.constraint(equalTo: subViewForLocation.centerYAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
-            descriptionLabel.trailingAnchor.constraint(equalTo: subViewForLocation.trailingAnchor, constant: safeIndent1),
+            descriptionLabel.trailingAnchor.constraint(equalTo: subViewForLocation.trailingAnchor, constant: -safeIndent1),
             
             weatherImage.heightAnchor.constraint(equalToConstant: 150),
             weatherImage.widthAnchor.constraint(equalToConstant: 150),
@@ -115,14 +115,22 @@ final class TopWetherView: UIView {
     
     // MARK: - SetupData
     
-    func setupData() {
-#warning("Настроить")
-        /*
-        descriptionLabel.text =
-        weatherImage.image =
-        temperatureLabel.text =
-        locationLabel.text =
-         */
+    func setupData(weather: Weather) {
+        if let description = weather.description {
+            descriptionLabel.text = description
+        }
+        
+        if let image = weather.iconCode {
+            weatherImage.image = UIImage(systemName: image)
+        }
+        
+        if let temperature = weather.temperature {
+            temperatureLabel.text = "\(temperature)º"
+        }
+        
+        if let location = weather.cityName {
+            locationLabel.text = location
+        }
     }
     
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,9 +15,8 @@ class TabBarController: UITabBarController {
     }
     
     private func setupTBC() {
-        let weatherScreenVC = WeatherScreenVC()
-        weatherScreenVC.tabBarItem.image = UIImage(systemName: "cloud.sun.fill")
+        let mainScreenVC = ScreenBuilder.shared.makeMainScreenVC()
         
-        viewControllers = [weatherScreenVC]
+        viewControllers = [mainScreenVC]
     }
 }

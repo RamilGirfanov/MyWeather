@@ -110,17 +110,31 @@ final class MainScreen: UIView {
     
     
     
-    func setupObjects() {
-        #warning("Настроить")
-        /*
-        feelsLikeLabel.text =
-        windSpeedLabel.text =
-        tempMinLabel.text =
-        tempMaxLabel.text =
-        pressureLabel.text =
-        humidityLabel.text =
-        */
-        topWeatherView.setupData()
+    func setupObjects(weather: Weather) {
+        if let feelsLikeTempetature = weather.feelsLikeTempetature?.rounded() {
+            feelsLikeLabel.text = "Ощущается как \(feelsLikeTempetature)º"
+        }
+        
+        if let windSpeed = weather.windSpeed?.rounded() {
+            windSpeedLabel.text = "Скорость ветра \(windSpeed)"
+        }
+        if let tempMin = weather.tempMin {
+            tempMinLabel.text = "Минимальная температура \(tempMin)"
+        }
+        
+        if let tempMax = weather.tempMax {
+            tempMaxLabel.text = "Минимальная температура \(tempMax)"
+        }
+        
+        if let pressure = weather.pressure {
+            pressureLabel.text = "Давление \(pressure)"
+        }
+        
+        if let humidity = weather.humidity {
+            pressureLabel.text = "Давление \(humidity)"
+        }
+                
+        topWeatherView.setupData(weather: weather)
         topWeatherView.setupColors()
     }
 }

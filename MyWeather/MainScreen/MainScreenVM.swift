@@ -7,6 +7,25 @@
 
 import Foundation
 
-final class MainScreenMV {
+final class MainScreenMV: MainScreenVMProtocol {
+    
+    // MARK: - Models
+    
+    let network = Network.shared
+    
+    
+    
+    
+    // MARK: - MainScreenVMProtocol
+    
+    func getData() {
+        network.getWeather(lat: 60.002, lon: 30.3891) { [weak self] weather in
+            guard let self = self else { return }
+            self.updateView(weather)
+        }
+    }
+    
+    var updateView: (Weather) -> Void = { _ in }
+    
     
 }

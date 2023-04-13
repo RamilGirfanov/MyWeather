@@ -4,14 +4,14 @@
 //
 //  Created by Рамиль Гирфанов on 15.01.2023.
 //
-
+/*
 import Foundation
 
 class NetworkServiceVM: NetworkServiceProtocol {
     
     let model = NetworkService()
     
-    var onCompletion: ((CurrentWeater) -> Void)?
+    var onCompletion: ((Weather) -> Void)?
     
     func prepareProperties(lat: Double, lon: Double) {
         model.lat = lat
@@ -59,7 +59,7 @@ class NetworkServiceVM: NetworkServiceProtocol {
         let task = session.dataTask(with: url) { [weak self] data, responce, error in
             guard let self = self else { return }
             if let data = data {
-                print(String(data: data, encoding: .utf8))
+//                print(String(data: data, encoding: .utf8))
                     if let currentLocation = self.parseLocationJSON(data: data) {
                         self.model.cityName = currentLocation.cityName                    
                 }
@@ -80,3 +80,4 @@ class NetworkServiceVM: NetworkServiceProtocol {
         return nil
     }
 }
+*/

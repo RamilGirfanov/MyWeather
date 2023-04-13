@@ -9,4 +9,6 @@ import Foundation
 
 protocol MainScreenVMProtocol {
     func getData()
+    
+    var updateView: (Weather) -> Void { get set }
 }

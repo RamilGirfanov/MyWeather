@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherData.swift
+//  WeatherData.swift
 //  MyWeather
 //
 //  Created by Рамиль Гирфанов on 17.01.2023.
@@ -7,24 +7,19 @@
 
 import Foundation
 
-struct CurrentWeatherData: Decodable {
-//    use
+struct WeatherData: Decodable {
     let name: String
     let main: Main
-    let weather: [Weather]
+    let weather: [WeatherElement]
     let wind: Wind
 }
 
 struct Main: Decodable {
-//    use
     let temp: Double
-//    use
     let feelsLike: Double
-//    use
     let tempMin: Double
-//    use
     let tempMax: Double
-//    use
+    let pressure: Int
     let humidity: Int
 
     enum CodingKeys: String, CodingKey {
@@ -32,20 +27,16 @@ struct Main: Decodable {
         case feelsLike = "feels_like"
         case tempMin = "temp_min"
         case tempMax = "temp_max"
+        case pressure
         case humidity
     }
 }
 
-struct Weather: Decodable {
-//    use
+struct WeatherElement: Decodable {
     let description: String
-//    use
     let icon: String
 }
 
 struct Wind: Decodable {
-//    use
     let speed: Double
-    let deg: Int
-    let gust: Double
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Рамиль Гирфанов on 13.01.2023.
 //
-
+/*
 import UIKit
 
 class WeatherScreenVC: UIViewController {
@@ -65,3 +65,4 @@ class WeatherScreenVC: UIViewController {
     }
 
 }
+*/

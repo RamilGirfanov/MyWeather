@@ -8,5 +8,7 @@
 import Foundation
 
 protocol NetworkProtocol {
-    func getWeather()
+    func getWeather(lat: Double,
+                    lon: Double,
+                    completionHeader: @escaping (Weather) -> Void)
 }

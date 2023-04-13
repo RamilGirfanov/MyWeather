@@ -10,6 +10,6 @@ import UIKit
 // Расшитение типа Double для перевода значения в String
 extension Double {
     var toString: String? {
-        String(format: "%.2f", self)
+        String(format: "%.0f", self)
     }
 }
