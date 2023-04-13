@@ -7,6 +7,6 @@
 
 import Foundation
 
-class MainScreenMV {
+final class MainScreenMV {
     
 }

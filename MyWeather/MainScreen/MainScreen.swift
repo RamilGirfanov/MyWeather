@@ -7,82 +7,120 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
-class MainScreen: UICollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+final class MainScreen: UIView {
     
-        // Configure the cell
+    // MARK: - init
     
-        return cell
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .systemBackground
+        layout()
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
+    
+    
+    // MARK: - UIObjects
+    
+    private let topWeatherView = TopWetherView()
+    
+    private let feelsLikeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let windSpeedLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let tempMinLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let tempMaxLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let pressureLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let humidityLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    // MARK: - Layout
+    
+    private func layout() {
+        [topWeatherView,
+         feelsLikeLabel,
+         windSpeedLabel,
+         tempMinLabel,
+         tempMaxLabel,
+         pressureLabel,
+         humidityLabel].forEach { addSubview($0) }
+        
+        let safeIndent1: CGFloat = 16
+        let safeIndent2: CGFloat = 8
+        
+        NSLayoutConstraint.activate([
+            topWeatherView.topAnchor.constraint(equalTo: topAnchor),
+            topWeatherView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topWeatherView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            feelsLikeLabel.topAnchor.constraint(equalTo: topWeatherView.bottomAnchor, constant: safeIndent1),
+            feelsLikeLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
+            
+            windSpeedLabel.topAnchor.constraint(equalTo: topWeatherView.bottomAnchor, constant: safeIndent2),
+            windSpeedLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
+            
+            tempMinLabel.topAnchor.constraint(equalTo: windSpeedLabel.bottomAnchor, constant: safeIndent1),
+            tempMinLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
+            
+            tempMaxLabel.topAnchor.constraint(equalTo: tempMinLabel.bottomAnchor, constant: safeIndent2),
+            tempMaxLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
+            
+            pressureLabel.topAnchor.constraint(equalTo: tempMaxLabel.bottomAnchor, constant: safeIndent1),
+            pressureLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
+            
+            humidityLabel.topAnchor.constraint(equalTo: pressureLabel.bottomAnchor, constant: safeIndent2),
+            humidityLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: safeIndent1),
+        ])
+    }
+    
+    
+    
+    func setupObjects() {
+        #warning("Настроить")
+        /*
+        feelsLikeLabel.text =
+        windSpeedLabel.text =
+        tempMinLabel.text =
+        tempMaxLabel.text =
+        pressureLabel.text =
+        humidityLabel.text =
+        */
+        topWeatherView.setupData()
+        topWeatherView.setupColors()
+    }
 }

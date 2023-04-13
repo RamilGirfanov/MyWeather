@@ -16,8 +16,11 @@
 		743CFEBF297B1D4C00061E6B /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743CFEBE297B1D4C00061E6B /* CurrentLocation.swift */; };
 		7461F86529E7328700DAB137 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F86429E7328700DAB137 /* NetworkProtocol.swift */; };
 		7461F86729E732E600DAB137 /* MainScreenVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F86629E732E600DAB137 /* MainScreenVMProtocol.swift */; };
-		7461F86929E7341C00DAB137 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F86829E7341C00DAB137 /* MainScreen.swift */; };
+		7461F86929E7341C00DAB137 /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F86829E7341C00DAB137 /* MainScreenVC.swift */; };
 		7461F86C29E7429A00DAB137 /* MainScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F86B29E7429A00DAB137 /* MainScreenVM.swift */; };
+		7461F86F29E744CF00DAB137 /* TopWetherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F86E29E744CF00DAB137 /* TopWetherView.swift */; };
+		7461F87129E7450300DAB137 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F87029E7450300DAB137 /* Extensions.swift */; };
+		7461F87329E74D9100DAB137 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461F87229E74D9100DAB137 /* MainScreen.swift */; };
 		7483117B2972CC9B0015ADA1 /* Model Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117A2972CC9B0015ADA1 /* Model Protocols.swift */; };
 		7483117D29746E180015ADA1 /* NetworkServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483117C29746E180015ADA1 /* NetworkServiceVM.swift */; };
 		7483117F29746EC90015ADA1 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7483117E29746EC90015ADA1 /* Data.plist */; };
@@ -42,8 +45,11 @@
 		743CFEBE297B1D4C00061E6B /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 		7461F86429E7328700DAB137 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		7461F86629E732E600DAB137 /* MainScreenVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVMProtocol.swift; sourceTree = "<group>"; };
-		7461F86829E7341C00DAB137 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		7461F86829E7341C00DAB137 /* MainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVC.swift; sourceTree = "<group>"; };
 		7461F86B29E7429A00DAB137 /* MainScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVM.swift; sourceTree = "<group>"; };
+		7461F86E29E744CF00DAB137 /* TopWetherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopWetherView.swift; sourceTree = "<group>"; };
+		7461F87029E7450300DAB137 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7461F87229E74D9100DAB137 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		7483117A2972CC9B0015ADA1 /* Model Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model Protocols.swift"; sourceTree = "<group>"; };
 		7483117C29746E180015ADA1 /* NetworkServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceVM.swift; sourceTree = "<group>"; };
 		7483117E29746EC90015ADA1 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 		7461F86229E7320000DAB137 /* Modeles */ = {
 			isa = PBXGroup;
 			children = (
+				743CFEB429771D1D00061E6B /* CurrentWeatherData.swift */,
+				743CFEB62977279B00061E6B /* CurrentWeather.swift */,
 				74831187297484490015ADA1 /* Network */,
 				74831188297484540015ADA1 /* Location */,
 			);
@@ -92,8 +100,10 @@
 		7461F86329E7320B00DAB137 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				7461F86829E7341C00DAB137 /* MainScreen.swift */,
 				7461F86B29E7429A00DAB137 /* MainScreenVM.swift */,
+				7461F86829E7341C00DAB137 /* MainScreenVC.swift */,
+				7461F87229E74D9100DAB137 /* MainScreen.swift */,
+				7461F86E29E744CF00DAB137 /* TopWetherView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				743CFEB029755E6B00061E6B /* Constants.swift */,
+				7461F87029E7450300DAB137 /* Extensions.swift */,
 				74C2B7702971BEF500517E71 /* Assets.xcassets */,
 				74C2B7722971BEF500517E71 /* LaunchScreen.storyboard */,
 				7483117E29746EC90015ADA1 /* Data.plist */,
@@ -182,8 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				7483117A2972CC9B0015ADA1 /* Model Protocols.swift */,
-				743CFEB429771D1D00061E6B /* CurrentWeatherData.swift */,
-				743CFEB62977279B00061E6B /* CurrentWeather.swift */,
 				743CFEBC297B1CCA00061E6B /* CurrentLocationData.swift */,
 				743CFEBE297B1D4C00061E6B /* CurrentLocation.swift */,
 			);
@@ -265,11 +274,13 @@
 				74C2B76C2971BEF500517E71 /* WeatherScreenVC.swift in Sources */,
 				743CFEB329756B4600061E6B /* WeatherScreen.swift in Sources */,
 				743CFEB72977279B00061E6B /* CurrentWeather.swift in Sources */,
-				7461F86929E7341C00DAB137 /* MainScreen.swift in Sources */,
+				7461F86929E7341C00DAB137 /* MainScreenVC.swift in Sources */,
 				7461F86C29E7429A00DAB137 /* MainScreenVM.swift in Sources */,
 				74C2B77C2971C0E900517E71 /* TabBarController.swift in Sources */,
 				74831184297484290015ADA1 /* LocationService.swift in Sources */,
+				7461F87329E74D9100DAB137 /* MainScreen.swift in Sources */,
 				74C2B7682971BEF500517E71 /* AppDelegate.swift in Sources */,
+				7461F87129E7450300DAB137 /* Extensions.swift in Sources */,
 				743CFEBD297B1CCA00061E6B /* CurrentLocationData.swift in Sources */,
 				74C2B76A2971BEF500517E71 /* SceneDelegate.swift in Sources */,
 				743CFEB129755E6B00061E6B /* Constants.swift in Sources */,
@@ -278,6 +289,7 @@
 				743CFEBB297B0EA500061E6B /* ext CoreLocation.swift in Sources */,
 				7461F86729E732E600DAB137 /* MainScreenVMProtocol.swift in Sources */,
 				743CFEBF297B1D4C00061E6B /* CurrentLocation.swift in Sources */,
+				7461F86F29E744CF00DAB137 /* TopWetherView.swift in Sources */,
 				7483117B2972CC9B0015ADA1 /* Model Protocols.swift in Sources */,
 				74831181297471770015ADA1 /* NetworkService.swift in Sources */,
 				748311862974843A0015ADA1 /* LocationServiceVM.swift in Sources */,
