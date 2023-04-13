@@ -41,11 +41,13 @@ final class MainScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainScreenVM?.getData()
         mainScreenVM?.updateView = { [weak self] weather in
             guard let self = self else { return }
-            self.updateView(weather: weather)
+            DispatchQueue.main.async {
+                self.updateView(weather: weather)
+            }
         }
-        mainScreenVM?.getData()
     }
     
     // MARK: - Функционал

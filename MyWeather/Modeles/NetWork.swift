@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  NetWork.swift
 //  MyWeather
 //
 //  Created by Рамиль Гирфанов on 13.04.2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class Network: NetworkProtocol {
-    static let shared = Network()
+final class NetWork: NetworkProtocol {
+    static let shared = NetWork()
     private init() {}
     
     private var lat: Double = 0
@@ -59,7 +59,7 @@ final class Network: NetworkProtocol {
             
             guard
                 let data = data,
-                var weather = self.parseJSON(data: data)
+                let weather = self.parseJSON(data: data)
             else {
                 return
             }

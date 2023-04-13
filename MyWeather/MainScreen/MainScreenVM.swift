@@ -11,7 +11,7 @@ final class MainScreenMV: MainScreenVMProtocol {
     
     // MARK: - Models
     
-    let network = Network.shared
+    let network = NetWork.shared
     
     
     

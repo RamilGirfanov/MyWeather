@@ -13,6 +13,7 @@ final class TopWetherView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .yellow
         layout()
     }
     
@@ -22,6 +23,12 @@ final class TopWetherView: UIView {
     
     
     // MARK: - UIObjects
+    
+    private let topBackgroundView: UIView = {
+        let topBackgroundView = UIView()
+        topBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        return topBackgroundView
+    }()
     
     private let subViewForLocation: UIView = {
         let view = UIView()
@@ -87,7 +94,7 @@ final class TopWetherView: UIView {
         
         NSLayoutConstraint.activate([
             subViewForLocation.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            subViewForLocation.leadingAnchor.constraint(equalTo: leftAnchor, constant: -22),
+            subViewForLocation.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -22),
             subViewForLocation.trailingAnchor.constraint(lessThanOrEqualTo: weatherImage.leadingAnchor, constant: -safeIndent1),
             subViewForLocation.heightAnchor.constraint(equalToConstant: 44),
             
@@ -120,7 +127,7 @@ final class TopWetherView: UIView {
             descriptionLabel.text = description
         }
         
-        if let image = weather.iconCode {
+        if let image = weather.systeemIconNameString {
             weatherImage.image = UIImage(systemName: image)
         }
         
@@ -131,6 +138,8 @@ final class TopWetherView: UIView {
         if let location = weather.cityName {
             locationLabel.text = location
         }
+        
+        layoutIfNeeded()
     }
     
     

@@ -18,8 +18,8 @@ struct Weather {
     let description: String?
     let windSpeed: Double?
     
-    let iconCode: String?
-    var systeemIconNameString: String {
+    private let iconCode: String?
+    var systeemIconNameString: String? {
         switch iconCode {
         case "01d": return "sun.max"
         case "01n": return "moon.stars.fill"
